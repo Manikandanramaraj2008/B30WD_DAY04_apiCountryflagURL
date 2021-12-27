@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var xhr =new XMLHttpRequest();
+        xhr.onload=function(){
+            if(xhr.status>=0 && xhr.status<=249){
+                var t= JSON.parse(this.response);
+                // console.log(t);
+                
+            }
+
+            for(i=0;i<t.length; i++){
+
+            console.log(t[i].flags.png)
+            console.log(t[i].flags.svg)
+            console.log(t[i].name.common)
+            console.log(t[i].name.official)
+            console.log(t[i].capital)
+            console.log(t[i].population)
+            console.log(t[i].region)
+            console.log(t[i].subregion)
+            console.log(t[i])
+            
+            }
+
+
+        };
+
+        xhr.open("GET","https://restcountries.com/v3.1/all");
+        xhr.send();
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
